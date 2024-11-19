@@ -1,0 +1,43 @@
+{
+  "name": "alura_imersao_backend",
+  "version": "1.0.0",
+  "description": "Alura Imersao Backend: Instabyte",
+  "main": "src/index.ts",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "https://github.com/AsonCS/Alura_Imersao_Backend",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AsonCS/Alura_Imersao_Backend"
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "Anderson Costa",
+    "email": "acsgsa@hotmail.com",
+    "url": "https://github.com/AsonCS"
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "nodemon",
+    "serve": "npx tsx --experimental-sqlite --env-file=../../.env src/index.ts",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongodb": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "eslint": "^9.15.0",
+    "nodemon": "^3.1.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
