@@ -1,32 +1,33 @@
-import path from 'path'
-import { DatabaseSync } from 'node:sqlite'
+import { Post, Result, ResultArray, ResultSingle } from "@/core"
 
-import PostTable from './PostTable'
-import { Post } from '@/core'
+import mongoDb from './mongodb'
+import sqliteDb from './sqlite'
 
-const database = new DatabaseSync(
-    `${path.resolve()}/src/database/database.db`
-)
-
-const postTable = new PostTable()
-postTable.createTable(database)
-
-export interface Result {
-    changes?: number | bigint
-    error?: any
-    lastInsertRowid?: number | bigint
-}
-
-export interface ResultQuery<T> {
-    data?: Array<T>
-    error?: any
-}
-
-export default {
-    postTable: {
-        getAll: () => postTable.getAll(database),
-        insert: (
+export interface MongoDb {
+    imersaoInstabytes: {
+        getAll: () => Promise<ResultArray<Post>>,
+        insertOne: (
             source: Partial<Post>
-        ) => postTable.insert(database, source)
+        ) => Promise<ResultSingle<Post>>,
+        updateOne: (
+            source: Partial<Post>
+        ) => Promise<ResultSingle<Partial<Post>>>
+    },
+    sample: {
+        getMovieBackToTheFuture: () => Promise<any>
     }
+}
+
+export interface SqliteDb {
+    postTable: {
+        getAll(): ResultArray<Post>,
+        insert(
+            source: Partial<Post>
+        ): Result<any>
+    }
+}
+
+export {
+    mongoDb,
+    sqliteDb
 }

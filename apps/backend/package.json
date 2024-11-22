@@ -24,19 +24,22 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "nodemon",
+    "dev": "npx tsx --watch --experimental-sqlite --env-file=../../.env --env-file=../../.env.local src/index.ts",
     "serve": "npx tsx --experimental-sqlite --env-file=../../.env src/index.ts",
     "test": "node --test"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "cors": "^2.8.5",
     "express": "^4.21.1",
+    "express-fileupload": "^1.5.1",
     "mongodb": "^6.10.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/express-fileupload": "^1.5.1",
     "@types/node": "^22.9.0",
     "eslint": "^9.15.0",
-    "nodemon": "^3.1.7",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   }

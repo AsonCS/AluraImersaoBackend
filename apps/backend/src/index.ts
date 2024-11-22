@@ -1,19 +1,29 @@
+import cors from 'cors'
 import express from 'express'
 import path from 'path'
 
-import routes from './api'
+import routes from '@/api'
+import { mongoDb, sqliteDb } from '@/database'
+import fs from '@/file_system'
 
-import './database'
-import './mongodb'
-
-const port = process.env.PORT
-const publicPath = `${path.resolve()}/src/public`
 
 const app = express()
+// Env files on
+// https://drive.google.com/drive/folders/10yHm8Rfv2ouf7ZE6tQr2RS8BJrA9X7_z?usp=drive_link
+const port = process.env.PORT
 
-app.use(express.json());
-app.use(express.static(publicPath))
-routes(app)
+app.use(express.json())
+app.use(express.static(
+    `${path.resolve()}/src/public`
+))
+app.use(express.static(
+    `${path.resolve()}/uploads`
+))
+app.use(cors({
+    origin: process.env.HOST_FRONT,
+    optionsSuccessStatus: 200
+}))
+routes(app, fs, mongoDb, sqliteDb)
 
 app.listen(
     port,
