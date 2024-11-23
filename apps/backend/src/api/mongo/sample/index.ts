@@ -1,6 +1,6 @@
-import { Route } from '@/api'
-import { ApiResponse } from '@/core'
-import { MongoDb } from '@/database'
+import { Route } from '../../../api'
+import { ApiResponse } from '../../../core'
+import { MongoDb } from '../../../database'
 
 async function get(
     db: MongoDb

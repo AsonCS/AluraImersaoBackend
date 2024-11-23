@@ -3,9 +3,9 @@ import cors from 'cors'
 import express from 'express'
 import path from 'path'
 
-import routes from '@/api'
-import { mongoDb, sqliteDb } from '@/database'
-import fs from '@/file_system'
+import routes from './api'
+import { mongoDb, sqliteDb } from './database'
+import fs from './file_system'
 
 
 const app = express()

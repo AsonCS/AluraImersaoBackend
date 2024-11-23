@@ -1,4 +1,4 @@
-import { MongoDb } from '@/database'
+import { MongoDb } from '../../database'
 
 import posts from './posts'
 import sample from './sample'

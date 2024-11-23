@@ -2,7 +2,8 @@
   "name": "alura_imersao_backend",
   "version": "1.0.0",
   "description": "Alura Imersao Backend: Instabyte",
-  "main": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
   "type": "module",
   "license": "AGPL-version-3.0",
   "private": false,
@@ -24,8 +25,10 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "npx tsx --watch --experimental-sqlite --env-file=../../.env --env-file=../../.env.local src/index.ts",
-    "serve": "npx tsx --experimental-sqlite --env-file=../../.env src/index.ts",
+    "dev": "npx tsx --watch --experimental-sqlite src/index.ts",
+    "serve": "node dist/index.cjs",
+    "build": "tsc && tsup src/index.ts --dts --minify",
+    "build:tsc": "tsc",
     "test": "node --test"
   },
   "dependencies": {
@@ -42,6 +45,7 @@
     "@types/express-fileupload": "^1.5.1",
     "@types/node": "^22.9.0",
     "eslint": "^9.15.0",
+    "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   }

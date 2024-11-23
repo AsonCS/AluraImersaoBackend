@@ -1,5 +1,5 @@
-import { ApiResponse, Post } from "@/core";
-import { MongoDb } from "@/database";
+import { ApiResponse, Post } from "../../../core";
+import { MongoDb } from "../../../database";
 
 import { Route } from "../..";
 import { ObjectId } from "mongodb";

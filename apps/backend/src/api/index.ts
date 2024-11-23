@@ -1,13 +1,13 @@
 import { Express } from 'express'
 import fileUpload from 'express-fileupload'
 
-import { ApiResponse } from '@/core'
-import { MongoDb, SqliteDb } from '@/database'
+import { ApiResponse } from '../core'
+import { MongoDb, SqliteDb } from '../database'
 
 import gemini from './gemini'
 import mongo from './mongo'
 import sqlite from './sqlite'
-import { FileSystem } from '@/file_system'
+import { FileSystem } from '../file_system'
 
 export interface Method {
     handler: (

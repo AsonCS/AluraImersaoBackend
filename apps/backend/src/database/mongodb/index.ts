@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb"
 
-import { Result } from "@/core"
-import { MongoDb } from "@/database"
+import { Result } from "../../core"
+import { MongoDb } from "../../database"
 
 import imersaoInstabytes from "./ImersaoInstabytes"
 import sample from "./Sample"

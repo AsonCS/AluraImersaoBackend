@@ -1,9 +1,9 @@
-import { ApiResponse, Post, ResultSingle } from "@/core";
+import { ApiResponse, Post, ResultSingle } from "../../core";
 
 import { Route } from "..";
-import generateDescription from "@/service/gemini";
-import { FileSystem } from "@/file_system";
-import { MongoDb } from "@/database";
+import generateDescription from "../../service/gemini";
+import { FileSystem } from "../../file_system";
+import { MongoDb } from "../../database";
 
 async function get(
     db: MongoDb,

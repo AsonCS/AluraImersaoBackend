@@ -1,4 +1,4 @@
-import { SqliteDb } from "@/database";
+import { SqliteDb } from "../../database";
 
 import posts from './posts'
 import { Route } from "..";

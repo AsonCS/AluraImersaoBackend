@@ -1,27 +1,27 @@
 import path from 'path'
-import { DatabaseSync } from 'node:sqlite'
+//import { DatabaseSync } from 'sqlite3'
 
 import PostTable from './PostTable'
-import { Post } from '@/core'
+import { Post } from '../../core'
 
-let database: DatabaseSync | null = null
+let database: any/*DatabaseSync*/ | null = null
 
 const postTable = new PostTable()
 
-function getDatabase(): DatabaseSync {
+function getDatabase(): any/*DatabaseSync*/ {
     if (database) {
         return database
     }
 
-    const db = new DatabaseSync(
+    /*const db = new DatabaseSync(
         `${path.resolve()}/src/database/sqlite/database.db`
     )
     console.log('Sqlite DatabaseSync connect')
 
     database = db
-    postTable.createTable(db)
+    postTable.createTable(db)*/
 
-    return db
+    return {}/*db*/
 }
 
 export interface Result {

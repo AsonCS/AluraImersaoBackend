@@ -1,6 +1,6 @@
-import { Route } from '@/api'
-import { ApiResponse, Post } from '@/core'
-import { SqliteDb } from '@/database'
+import { Route } from '../../../api'
+import { ApiResponse, Post } from '../../../core'
+import { SqliteDb } from '../../../database'
 
 async function get(
     db: SqliteDb

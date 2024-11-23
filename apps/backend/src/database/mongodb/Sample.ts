@@ -1,10 +1,10 @@
-import { ResultArray } from "@/core"
+import { ResultArray } from "../../core"
 
 import { collection } from "."
 
 export default {
     getMovieBackToTheFuture: async (): Promise<ResultArray<any>> => {
-        return collection({
+        return collection<any, ResultArray<any>>({
             db: 'sample_mflix',
             collection: 'movies',
             execute: async (collection) => {

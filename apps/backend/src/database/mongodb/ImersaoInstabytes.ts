@@ -1,4 +1,4 @@
-import { cleanPost, Post, ResultArray, ResultSingle } from "@/core"
+import { cleanPost, Post, ResultArray, ResultSingle } from "../../core"
 
 import { collection } from "."
 import { ObjectId } from "mongodb"

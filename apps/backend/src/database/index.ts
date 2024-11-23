@@ -1,4 +1,4 @@
-import { Post, Result, ResultArray, ResultSingle } from "@/core"
+import { Post, Result, ResultArray, ResultSingle } from "../core"
 
 import mongoDb from './mongodb'
 import sqliteDb from './sqlite'
